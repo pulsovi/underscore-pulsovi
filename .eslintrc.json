@@ -70,7 +70,7 @@
         "peerDependencies": false
     }],
     "import/order": ["error", {
-        "alphabetize": {"order": "ignore", "caseInsensitive": true},
+        "alphabetize": {"order": "asc", "caseInsensitive": true},
         "groups": [
             "builtin",
             "external",
@@ -97,7 +97,7 @@
     "lines-between-class-members": ["error", "always"],
     "max-classes-per-file": "warn",
     "max-depth": "error",
-    "max-len": ["error", { "code": 99 }],
+    "max-len": ["error", { "code": 101 }],
     "max-lines": "error",
     "max-lines-per-function": "warn",
     "max-nested-callbacks": "error",
@@ -148,7 +148,7 @@
     "no-lone-blocks": "error",
     "no-lonely-if": "error",
     "no-loop-func": "error",
-    "no-magic-numbers": ["warn", { "ignore": [-1, 0, 1, 2] }],
+    "no-magic-numbers": ["warn", { "ignore": [-2, -1, 0, 1, 2] }],
     "no-mixed-operators": "error",
     "no-mixed-requires": "error",
     "no-multi-assign": "error",
@@ -165,7 +165,7 @@
     "no-new-require": "error",
     "no-new-wrappers": "error",
     "no-octal-escape": "error",
-    "no-param-reassign": "error",
+    "no-param-reassign": ["error", { "props": false }],
     "no-path-concat": "error",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-process-env": "warn",
@@ -246,7 +246,7 @@
       "unnecessary": false,
       "numbers": true
     }],
-    "quotes": ["error", "double", { "avoidEscape": true }],
+    "quotes": ["error", "single", { "avoidEscape": true }],
     "radix": "error",
     "require-await": "error",
     "require-unicode-regexp": "error",
