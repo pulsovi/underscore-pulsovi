@@ -4,18 +4,24 @@ const { isObject, isUndefined } = underscore;
 
 Object.assign(exports, underscore);
 
-function get(object, path) {
+function get(object, path, defaultValue = null) {
   let trail = null;
+  const eject = {};
 
   if ('' === path) trail = [];
   else if ('string' === typeof path) trail = path.split('.');
   else if (Array.isArray(path)) trail = path;
   else throw new TypeError(`path must be a String or an Array, ${typeof path} found.`);
 
-  return trail.reduce(
-    (reduced, next) => (reduced && reduced[next] ? reduced[next] : null),
+  const reducedValue = trail.reduce(
+    (reduced, next) => {
+      if (reduced !== eject && reduced && next in reduced) return reduced[next];
+      return eject;
+    },
     object
   );
+
+  return reducedValue === eject ? defaultValue : reducedValue;
 }
 exports.get = get;
 
