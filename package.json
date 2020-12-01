@@ -18,6 +18,7 @@
     "eslint-config-pulsovi": "https://github.com/pulsovi/eslint-config-pulsovi.git"
   },
   "dependencies": {
+    "indent-string": "^4.0.0",
     "underscore": "^1.11.0"
   }
 }

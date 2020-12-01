@@ -1,3 +1,4 @@
+const indentString = require('indent-string');
 const underscore = require('underscore');
 
 const { isObject, isUndefined } = underscore;
@@ -24,6 +25,12 @@ function get(object, path, defaultValue = null) {
   return reducedValue === eject ? defaultValue : reducedValue;
 }
 exports.get = get;
+
+// eslint-disable-next-line no-magic-numbers
+function indent(string, count = 4, options = {}) {
+  return indentString(string, count, options);
+}
+exports.indent = indent;
 
 exports.int = val => val | 0;
 
