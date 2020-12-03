@@ -1,6 +1,6 @@
 {
   "name": "underscore-pulsovi",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "extended version of official underscore.js",
   "main": "index.js",
   "repository": "https://github.com/pulsovi/underscore-pulsovi.git",
